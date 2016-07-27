@@ -43,17 +43,22 @@
                   <p>{{detailCtrl.dish.description}}</p>
                 </div>
               </div>
-            </div>
+            </div>             
             <div class="col-xs-9 col-xs-offset-1">
-                <h4>Customer Comments</h4>
-                <blockquote ng-repeat="item in detailCtrl.dish.comments">
-                  <p>{{item.rating}} Stars</p>
-                  <p>{{item.comment}}</p>
-                  <footer>{{item.author}}, {{item.date | date:'longDate'}}</footer>
-                </blockquote>
+              <h4>Customer Comments 
+                <span>
+                  <small>Sort by: 
+                    <input class="input-sm" ng-model="sort">
+                  </small>
+                </span>
+              </h4>
+              <blockquote ng-repeat="item in detailCtrl.dish.comments | orderBy:sort">
+                <p>{{item.rating}} Stars</p>
+                <p>{{item.comment}}</p>
+                <footer>{{item.author}}, {{item.date | date:'longDate'}}</footer>
+              </blockquote>
             </div>
         </div>
-
     </div>
 
     <script src="../bower_components/angular/angular.min.js"></script>
