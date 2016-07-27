@@ -26,7 +26,7 @@
 <body>
 
     <div class="container">
-        <div class="row" ng-controller="menuController as menuCtrl">
+        <div class="row row-content" ng-controller="menuController as menuCtrl">
             <div class="col-xs-12">
                 <ul class="nav nav-pills" role="tablist">
                     <li role="presentation"
@@ -56,7 +56,7 @@
                             <div class="media-left media-middle">
                                 <a href="#">
                                 <img class="media-object img-thumbnail"
-                                ng-src={{dish.image}} alt="Uthappizza">
+                                ng-src={{dish.image}} alt={{dish.name}}>
                                 </a>
                             </div>
                             <div class="media-body">
